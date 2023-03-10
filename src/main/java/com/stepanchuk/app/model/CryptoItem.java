@@ -17,7 +17,6 @@ public class CryptoItem {
     private String curr1;
     private String curr2;
     private double price;
-
     private LocalDateTime createdAt;
 
     public CryptoItem(UUID id, String curr1, String curr2, double price) {

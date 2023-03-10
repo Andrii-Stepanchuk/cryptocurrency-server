@@ -18,6 +18,8 @@ public class CryptoItem {
     private String curr2;
     private double price;
 
+    private LocalDateTime createdAt;
+
     public CryptoItem(UUID id, String curr1, String curr2, double price) {
         this.id = id;
         this.curr1 = curr1;
@@ -25,8 +27,6 @@ public class CryptoItem {
         this.price = price;
         this.createdAt = LocalDateTime.now();
     }
-
-    private LocalDateTime createdAt;
 
     public CryptoItem(CryptoItemDTO cryptoItemDTO) {
         this.id = cryptoItemDTO.getId();

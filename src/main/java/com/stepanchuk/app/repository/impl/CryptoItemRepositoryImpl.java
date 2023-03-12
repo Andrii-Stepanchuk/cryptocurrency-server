@@ -42,8 +42,8 @@ public class CryptoItemRepositoryImpl implements CryptoItemRepository {
     @Override
     public boolean update(CryptoItem cryptoItem) {
         CryptoItem bdItem = database.get(cryptoItem.getId());
-        bdItem.setCurr1(cryptoItem.getCurr1());
-        bdItem.setCurr2(cryptoItem.getCurr2());
+        bdItem.setCryptocurrency(cryptoItem.getCryptocurrency());
+        bdItem.setCurrency(cryptoItem.getCurrency());
         bdItem.setPrice(cryptoItem.getPrice());
         bdItem.setCreatedAt(cryptoItem.getCreatedAt());
         return true;

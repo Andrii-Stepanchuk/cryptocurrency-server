@@ -24,7 +24,6 @@ public class CryptoItemController {
         return ResponseEntity.ok().body(cryptoItemService.create(cryptoItemDTO));
     }
 
-
     @GetMapping("/{id}")
     public ResponseEntity<?> readById(@PathVariable @NotBlank String id) {
         return ResponseEntity.ok().body(cryptoItemService.findById(id));

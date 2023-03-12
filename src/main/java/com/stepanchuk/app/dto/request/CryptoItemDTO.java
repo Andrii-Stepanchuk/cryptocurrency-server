@@ -11,7 +11,7 @@ import java.util.UUID;
 @NoArgsConstructor
 public class CryptoItemDTO {
     private UUID id;
-    private String curr1;
-    private String curr2;
+    private String cryptocurrency;
+    private String currency;
     private double price;
 }

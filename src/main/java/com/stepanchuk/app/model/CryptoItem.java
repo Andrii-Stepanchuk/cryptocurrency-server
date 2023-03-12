@@ -14,23 +14,23 @@ import java.util.UUID;
 public class CryptoItem {
 
     private UUID id;
-    private String curr1;
-    private String curr2;
+    private String cryptocurrency;
+    private String currency;
     private double price;
     private LocalDateTime createdAt;
 
-    public CryptoItem(UUID id, String curr1, String curr2, double price) {
+    public CryptoItem(UUID id, String cryptocurrency, String currency, double price) {
         this.id = id;
-        this.curr1 = curr1;
-        this.curr2 = curr2;
+        this.cryptocurrency = cryptocurrency;
+        this.currency = currency;
         this.price = price;
         this.createdAt = LocalDateTime.now();
     }
 
     public CryptoItem(CryptoItemDTO cryptoItemDTO) {
         this.id = cryptoItemDTO.getId();
-        this.curr1 = cryptoItemDTO.getCurr1();
-        this.curr2 = cryptoItemDTO.getCurr2();
+        this.cryptocurrency = cryptoItemDTO.getCryptocurrency();
+        this.currency = cryptoItemDTO.getCurrency();
         this.price = cryptoItemDTO.getPrice();
         this.createdAt = LocalDateTime.now();
     }

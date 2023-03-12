@@ -35,12 +35,16 @@ public class CryptoItemServiceImpl implements CryptoItemService {
 
     @Override
     public boolean update(CryptoItemDTO cryptoItemDTO) {
-        return cryptoItemRepository.update(new CryptoItem(cryptoItemDTO));
+        boolean result = cryptoItemRepository.update(new CryptoItem(cryptoItemDTO));
+        if (result) return true;
+        throw new NoSuchElementException("CryptoCurrency not found with id " + cryptoItemDTO.getId());
     }
 
     @Override
     public boolean delete(String stringId) {
-        return cryptoItemRepository.delete(stringId);
+        boolean result = cryptoItemRepository.delete(stringId);
+        if (result) return true;
+        throw new NoSuchElementException("CryptoCurrency not found with id " + stringId);
     }
 
 }

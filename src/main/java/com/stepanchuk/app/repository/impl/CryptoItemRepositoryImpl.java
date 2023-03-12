@@ -42,6 +42,8 @@ public class CryptoItemRepositoryImpl implements CryptoItemRepository {
     @Override
     public boolean update(CryptoItem cryptoItem) {
         CryptoItem bdItem = database.get(cryptoItem.getId());
+        if (bdItem == null)
+            return false;
         bdItem.setCryptocurrency(cryptoItem.getCryptocurrency());
         bdItem.setCurrency(cryptoItem.getCurrency());
         bdItem.setPrice(cryptoItem.getPrice());
@@ -52,7 +54,6 @@ public class CryptoItemRepositoryImpl implements CryptoItemRepository {
     @Override
     public boolean delete(String stringId) {
         UUID id = UUID.fromString(stringId);
-        database.remove(id);
-        return true;
+        return database.remove(id) != null;
     }
 }
